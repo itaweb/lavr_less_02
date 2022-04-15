@@ -1,0 +1,148 @@
+/* группировка селеторов, применяет стили ко всем */
+h2,
+.h2,
+h3,
+.h3 {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+h2,
+.h2 {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+h3,
+.h3 {
+  font-size: 18px;
+  margin: 16px 0;
+}
+
+/* контекстные селекторы, поиск внутри */
+/* .catalog li{
+	margin: 10px 0;
+} */
+
+/* дочерние селекторы, поиск внутри, но только на 1 уровне вложенности */
+.catalog > li {
+  margin: 10px 0;
+}
+
+.catalog ul > li {
+  margin: 5px 0;
+}
+
+/* уточнение, слитное написание, применяется, если есть оба селектора */
+/* .menu__item
+.menu__item-active
+
+.catalog__item
+.catalog__item-active */
+
+.menu li.active {
+  color: red;
+}
+
+.catalog li.active {
+  color: green;
+}
+
+/* соседние селекторы, поиск элементов за текущим */
+
+/* .menu + hr{
+	height: 5px;
+} */
+
+/* Тильда ищет все элементы которые после основного селектора
+   а после плюса ищет сразу элемент */
+
+.menu ~ hr {
+  height: 5px;
+}
+
+.menu {
+  display: none;
+}
+
+#menu__toogle {
+  display: none;
+}
+
+#menu__toogle:checked ~ .menu {
+  display: block;
+}
+
+/*  */
+
+.nav {
+  font-size: 20px;
+}
+
+.nav a {
+  font-size: 1.2em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: red;
+}
+
+.nav a:active {
+  color: #f90;
+}
+
+.nav a:focus {
+  outline: 2px solid #f90;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #008019;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:active {
+  box-shadow: 5px 5px 5px #222 inset;
+}
+
+input:focus {
+  outline: 2px solid #f90;
+}
+
+.row {
+  margin: 20px 0;
+}
+
+.sale:after {
+  content: "sale";
+  margin-left: 5px;
+  color: #fff;
+  background: red;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1:after {
+  content: "";
+  display: block;
+  width: 0%;
+  opacity: 0;
+  height: 2px;
+  background-color: #222;
+  margin: 5px auto 0;
+  transition: width 0.3s, opacity 0.3s;
+}
+
+h1:hover:after {
+  width: 100%;
+  opacity: 1;
+}
